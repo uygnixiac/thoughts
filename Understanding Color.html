@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Understanding Color</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Understanding Color</h1>
+
+<p>Original video by Blender Guru <a href="https://www.youtube.com/watch?v=Qj1FK8n7WgY&amp;feature=youtu.be">(YouTube Link)</a></p>
+
+<h2 id="toc_1">Three Parts</h2>
+
+<ol>
+<li>Why color?</li>
+<li>Saturation and value</li>
+<li>Color harmonies</li>
+</ol>
+
+<h2 id="toc_2">Why</h2>
+
+<p>Colors can guide the eyes to what&#39;s important</p>
+
+<h2 id="toc_3">Saturation and Value</h2>
+
+<p>Saturation – the intensity of the color
+Value — the brightness/darkness of the color</p>
+
+<p>(Notice that when saturation is set to 0, the color is white, while when value is set to 0, it appears as black.)</p>
+
+<p><img src="https://jeqysa.ch.files.1drv.com/y4mbWm8h3TByGrZK3uiMgmk2w7ErNmNLkLEDROu9JIz40pCLS7g1ADa5VbGMD5ibjTVHdmFf5Ej5nJAu4HQ3gsZp0mH21XFn7zPi4S_jgDlvH8G27CgS-bYHvYj2CW2BpfWWrEkEVp_0GX9Hv96EZGXSLfe8bktijwO7CQ-0JSw-AP1YrY20hXIYXc4HmULRR1PvPeOcTly61NfdKFqrXjsoQ?width=2560&amp;height=1600&amp;cropmode=none" alt="Saturation and value"></p>
+
+<p>Highly saturated colors — They look incredibly fake, and your eyes have nowhere to rest.</p>
+
+<p><img src="https://jetixg.ch.files.1drv.com/y4mHfj_RIZRXC5lAvq_To8A_L5NtH_k_-GR0n_chYn8pir1LZA-ETr71YIaREMEUhoXEBBvXJ43TiL9KcFJn6KgWg4Xj1ZFIgpA0YDCft0UcaQN6sxLFPLRRZM8699ySjniyBAMmnSmohhDgH-NjrzjC9oEtBxEEzU8Zr_9wufZrnGbc-f4I_9bb29GxIm15ABSMSCO9qiyNiZe-aMtvf0Zsw?width=2560&amp;height=1600&amp;cropmode=none" alt="fake"></p>
+
+<p>While saturated colors they are not bad.
+You can use it to draw your audience&#39;s attention.</p>
+
+<p><img src="https://jeszja.ch.files.1drv.com/y4mCoGp0Ri_7yEdh5rz3F2jvUoUoOrPQAO7IdQh7q90TgrJgRqUsjqvHZGAlMwERvpdmgQGe6CX4T50RkFfsho3yfVhtbK8GnPmb4kd0pC8Vh7CJ8MPAuy_0CJ0JHwqd5GfjpRktr5K3d0A6ymAQoP3z3SfIGPYJARLpDxYG1r4Y6eQz9bGSQILfXGich2_lrWXJLyhZzlFqOsWH5wpxMi6BQ?width=2560&amp;height=1600&amp;cropmode=none" alt="attention"></p>
+
+<p>In terms of cartoon, saturated color can notify the viewer that that are looking at something that is fake.</p>
+
+<p><img src="https://jer9ow.ch.files.1drv.com/y4mBsuNuiNFM83wVQEnncMmW0QsSVbHSCQBM8I9TRUKkoX9FaBjyjUBYCa78MX52qB-Wy_gg8CPmoTiqhld0sTcnsyhetjMHnDJxWxWe7Uec4lFDg-zzDm0nIJhHo_oJ7YOIKJcuvWg7s25zwOfOmQNFwrPjmbiKjNN6ocXP48alI8nKHonGuWbR10myanP_F7jKg5SUTi20uDj1iYbducEWw?width=2560&amp;height=1600&amp;cropmode=none" alt="cartoon"></p>
+
+<p>The usage signifies different atmospheres — from vibrant colors to greys and browns.</p>
+
+<p><img src="https://jercjw.ch.files.1drv.com/y4myAtCK3o6mm3AN-GIMCcWCcRvx02e9KlBaoeRtseEGUIbe9clX_HL2SNVNCHv65_R2dpAqkSv6W6UE8sU_wxsNsEQNelM2ZdmP_g1mp1J9WhPT4pvrMAGOXn9lRTyUbB8s3bTwFlVpvh9JQsc5T1fJmOSTkjBkRVcZWKgmno-A4vEHSmWCCrN-iRi2hhgdfLGaNRImfYxbcYoUL5Nrl3NrA?width=2560&amp;height=1600&amp;cropmode=none" alt="atmospheres"></p>
+
+<p>The parrot gives you something to anchor yourself to, then you are free the explore the rest of the scene.</p>
+
+<p><img src="https://gsuhyg.ch.files.1drv.com/y4m1eHlrNDd4JJdsTiHrbbr-AzYc6wPAkSZzWK_dTa-DsgCc1vomcQx5mTnL75rY0FqdYRpKexezUaVnabOvpOGBgYIDJ4SNvikBkTIpNAd8wN5XFErH6Uc7CWWb1qeYrcJWJCsOx86B8UT9Uzy2yChcD8hdurI70ZQPG06eCx1ToD-D5yeQqpsvzT-ZVMLBTcW0NazCNrkhWz1xqupEl_28g?width=2560&amp;height=1600&amp;cropmode=none" alt="parrot"></p>
+
+<h3 id="toc_4">To summarize:</h3>
+
+<ol>
+<li>Don&#39;t overdo it </li>
+<li>Use it to guide the viewer </li>
+<li>Use it to tell the story </li>
+<li>Use it to change the mood </li>
+<li>Draw attention to something </li>
+</ol>
+
+<p><img src="https://jet3mw.ch.files.1drv.com/y4mx2_Vmlm0jVPq4z2xJgFhnFekdvqplAB7-O1fWcliJwNFYyF7b7Aug8rQNUIjjG-GiDI_5cwfgkEq-BujbD3U3wK1LiYc6Wx1FjlOAnvf6su0zmcqipwOqJm9AZh42AqFXLk918NiKbNmfeVhI8zeuIqkAAyXO7AC2h7GMPV5N52So_2X5v9pK_Z8dJtatWhpxx8Jn-rvS-IN3hj1oGFq7A?width=2560&amp;height=1600&amp;cropmode=none" alt="summarize"></p>
+
+<h2 id="toc_5">Color harmonies</h2>
+
+<p>Some colors look better together than others.</p>
+
+<p><img src="https://gss8pw.ch.files.1drv.com/y4m10fi9F4wEknSbYliMK7QVgFL1ybPFL1jFPp1qFphAmzb8yH-DDxKbLiiQucB5TLi8G1T_M0eiq9aW0neJKHUSqFVkTRPAaq29ngwrZ94RCXI97Ux7qpaN41mvehO_-HgwDAP7l3pODaPhYcYS1I9cAjCJaHIUzz_CDgALzrDfiCgymiGei0G09KK-qy-zN5FyH0sUy3hpM7YXLvdXSbbmQ?width=2560&amp;height=1600&amp;cropmode=none" alt="Color"></p>
+
+<h3 id="toc_6">1.Monochromatic</h3>
+
+<p>Make you focus on the story as opposed to the colors.</p>
+
+<ol>
+<li>Only one color</li>
+<li>Best for single subject</li>
+<li>Atmospheric</li>
+</ol>
+
+<p><img src="https://gstr4q.ch.files.1drv.com/y4madGCpmw1YteV2XGsIicjUX1--4sgDb5NAocKd1vbSZWZsx4NzzE9GTfhlWydPS4sDsmctKGJGlxFZAAJQy7syfikzRW6w6dS6l2mIqGR1OVxNxwK-ysTCKdBJX8SH3njQN0T0zyPZ9u4QiX6Kpcu8OqfiYz0RKDzOxzYOXuONG6NNSxxwupCcHfT6HhjQRERt99WYa-DJ4uF1DJxGkXsUA?width=2560&amp;height=1600&amp;cropmode=none" alt="Monochromatic"></p>
+
+<p><img src="https://gssgvg.ch.files.1drv.com/y4mQ6ur-vYtxZe91Exhw3uf6UqygTPQfpvfbIf960bN9wMvtgmCDEVy3atQRyqj2bKZcxWMd9jCYYDEkjRogV5LIvJ4WT0DaqPCZKJlqCWprPS7u10JNK8jG8O5TiqsUmGpWK_BMTCllO1hlCY6tgv5iDNcqjFUUqlxTYPY0S4Atnhs15PtNbnXkEHNLcMxGqZg6Cx5MOy_J_uI1gLWFr647A?width=2560&amp;height=1600&amp;cropmode=none" alt="Monochromatic"></p>
+
+<h3 id="toc_7">2.Analogous</h3>
+
+<p>We see it a lot in nature — green trees, blue sky. </p>
+
+<ol>
+<li>Color adjacent on wheel</li>
+<li>Easy on eyes</li>
+<li>Peaceful, comfortable mood</li>
+<li>Seen in nature</li>
+</ol>
+
+<p><img src="https://gss1pa.ch.files.1drv.com/y4mdh_NszicmGB1Gdp-4zlnm9g4OROCpoEbIz7OHxNfdtaLzcZupXpjs3echUkdkFe_hrPD0Di3Gq7ziVoA7QEeTGvGV_dsHiG5ueVRGUhhf820Ez0ESJN4tMwI1vVj3z4dFB-2ZI6mNjJjuk3aRMvwEa_WffV7dT905zzNpSQXWHaloDLocMGXVbkFDPLDNUpFa-mEh8wrIHKFHFIq4f7UUA?width=2560&amp;height=1600&amp;cropmode=none" alt="Analogous"></p>
+
+<p><img src="https://gsvqba.ch.files.1drv.com/y4mRjZ0lIaCEHpxHT8z3CvFnXbq-X5rMoP15O2b9Gn35Sx8KAkQ0ooQeAIvoc-j96fz-dG59utx9rMVhfObb9q5DQFSIN2VYtDU6B2VfcENFGqnslXv47IlmvkopufClYWddK2AHt8F1ORUNotQ4Em1t9G_XHCrQf67Gwf7sUubGk_kojhtfAQXVkNpZhc-3dOqqZ6PQGy_YP7HmzXWQQNdPg?width=2560&amp;height=1600&amp;cropmode=none" alt="Analogous"></p>
+
+<h3 id="toc_8">3.Triadic</h3>
+
+<ol>
+<li>Equally distant on wheel</li>
+<li>Harf to pull off</li>
+<li>Best for cartoon/surreal scenes</li>
+</ol>
+
+<p><img src="https://gsvqdg.ch.files.1drv.com/y4mfKHY24PT0F5qsyKSIeMHy1b1_6FbuMjHIOpr4MlojcZCTjQ8q9uUleiBPs7jPX3yMBxOMnufwMifL5jA8tGRyj5UVDOQDZdV4hbhCYuMylv3VejUERPrAtd-XIKpM9jkaSC390KSkoChSrNEfIm40KnUmSgQzl9a1HfcNpYTiDGTxdHLZHmjyLy8rK5Edy-AXlfwBzwjbPxx3D8rl-rj4g?width=2560&amp;height=1600&amp;cropmode=none" alt="Triadic"></p>
+
+<p><img src="https://gsuagw.ch.files.1drv.com/y4ma-SB-LP8gH79J8SbE-8ia-hxWCtkvOFmSzsQ3eLUBwREYXii60cXGnuKi-bVMxXk9HmsWXOu6wGRW8JMwJ54cnXdkldMLJi7ogcvvozjljEhaQNJk9PXtK7Rgjh766THDS0dt9O9Zja6Elx5mT62-9Ve1n0Dtcf8i3opggfn4Gu2XHqthw1G6vTEE0S3uNEhgkXCuG038W7jKJGub8HSIA?width=2560&amp;height=1600&amp;cropmode=none" alt="Triadic"></p>
+
+<h3 id="toc_9">4.Complementary</h3>
+
+<ol>
+<li>Opposing colors on wheel</li>
+<li>Very popular</li>
+<li>Naturally pleasing to eye</li>
+<li>Use one color predominantly</li>
+</ol>
+
+<p><img src="https://gssu5a.ch.files.1drv.com/y4m5HiCJ3mhXLYB2kbxtlNQCXAtn2urOURKOAqfCYYs9znNK1wsG32iBx3sjjkFOrTlRp06VKLUIFJMOamI7mJ10ALi0Q9LRKGye-47BLPW7FThoxl8JiUgZJW52uMTGVspkEeZnicPMdpsS7hPD4hYc-g58TndWMw0ZnbMrCe0B_vWRuODSWnjvzzr5DEzC74j3ib-JVDfkjqCHMfzj6_rDA?width=2560&amp;height=1600&amp;cropmode=none" alt="Complementary"></p>
+
+<p><img src="https://f1b6jw.ch.files.1drv.com/y4m8HZr6rCSN8cxX3o-FGxbk58MdpCnahHPSNJgovms6RQHyq0ha6wd8wvuha_6vM7ul0CRuf-YFvDFxm2nUQoMU3Zr12VKZ2TwaUWb5J5QnyT3d2xCZF6Uy6hiDJksnerQo-V4jkX4GogrIIYezUM6tsBbqwlroQIGLS_51WqhlQOeFy4Q5mgO3u4ju0haIYthYOYUiVrklhjEYr-SWB7SZQ?width=2560&amp;height=1600&amp;cropmode=none" alt="Complementary"></p>
+
+<h3 id="toc_10">5.Split Complementary</h3>
+
+<ol>
+<li>Similar to complementary, but one end extended</li>
+<li>More creative freedom</li>
+<li>Feels lively, joyous</li>
+</ol>
+
+<p><img src="https://gst5bw.ch.files.1drv.com/y4mJo7xwOFCq9-kljgVrwIkAK1V45nl5i3qCBdvr9u8bEIdY-S44JUrmQc8pDWvqYQd_nVdJpMhWd57N2ZxfuhQhuH_vtnHNBRvnO4NhA4b1WoKc7z9wCPmlj-AqsXckjBZwxT_LqctcypGBC0w-F86JxXdwGfHEJS7GmoHWUN24NZzImzk6LnNTaJs8dRpSVeKZcO3NYi-l0Zgxf0L4i8XKQ?width=2560&amp;height=1600&amp;cropmode=none" alt="Split Complementary"></p>
+
+<p><img src="https://f1bepg.ch.files.1drv.com/y4m4FsTKkEFBnz3zJ307K-fUS7c11WDf41lyHkRy76g3jX2pgtmUuH3miy_W6osZR0qLjdBkgLlC4zg29P5nQICYFo7Y5NGyXJh6DoT59Zu5-v-bogOFlgqSy1T_fc8g1vcLYpBbEbTsGIkFTAa9hHrZfwNZNPFmR8yB22a3pCbctNNsm_Xwk6tFLK44HUPnkyu5nXZ8tc-zbPc7-pVEJ2cPQ?width=2560&amp;height=1600&amp;cropmode=none" alt="Split Complementary"></p>
+
+<h3 id="toc_11">6.Tetratic (Double Complementary)</h3>
+
+<ol>
+<li>Two pairs of opposing colors</li>
+<li>Best used for foreground/background</li>
+<li>Never use 25% of each</li>
+<li>Hard, but pleasing</li>
+</ol>
+
+<p><img src="https://f1avna.ch.files.1drv.com/y4mLc9W6JKHqHUUdw35liwNLyeKg4fU8pwxZENObH8XTeCB3uqID2v7PBW6PlgbCgxHU6J65r9nhoP9AVuTMLP8PqZTAhe10EcAyIjgJcE6HGCh7v3_jym7Qn6YI35QNsfaozTc8pE2O7i-ayuuXuKEsB7m2vCceRoJvNTCDBvY9vhnXfP9PpcQPwhsWoi-JO4H24bpRqKVhcSA-DxQe-6fHw?width=2560&amp;height=1600&amp;cropmode=none" alt="Tetratic"></p>
+
+<p><img src="https://f1zfsw.ch.files.1drv.com/y4m-6XpqetjJTEi3L3yjh5ax0fSlyvHYXS6_5Mwg5qY1rdu7lhnmQyA-YxHGToetLUH5vKjs0U_R56ya4JnJ-_26TPoN4gIxBxwKqyt9AOLdVNR2GUDL3U6XBsvGiV1M7ZwinIbzcFCkIYKrDSq3UwcTlfQQaIyTc91MbEpdAKfJsR5NG1AhCqk3HM2w-yv-5Fs9BLqMY18WTfySSvKtXrHew?width=2560&amp;height=1600&amp;cropmode=none" alt="Tetratic"></p>
+
+
+
+
+</body>
+
+</html>
